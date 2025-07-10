@@ -40,18 +40,45 @@
       </div>
     </section>
 
-    <section class="form-section" id="demo">
-      <h3>Register for a Free Trial</h3>
-      <div class="form-grid">
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Phone Number">
-        <input type="text" placeholder="Hospital/Clinic Name">
-        <input type="email" placeholder="Address">
-        <input type="email" placeholder="Email">
-        <input type="email" placeholder="Message">
+   <section class="form-section" id="demo">
+  <h3>Register for a Free Trial</h3>
 
-      </div>
-    </section>
+  <form action="https://formsubmit.co/anilbarmola007@gmail.com" method="POST" onsubmit="showThankYouMessage(event)">
+    <div class="form-grid">
+      <input type="text" name="Name" placeholder="Name" required>
+      <input type="tel" name="Phone" placeholder="Phone Number" required>
+      <input type="text" name="Hospital Name" placeholder="Hospital/Clinic Name">
+      <input type="text" name="Address" placeholder="Address">
+      <input type="email" name="Email" placeholder="Email" required>
+      <input type="text" name="Message" placeholder="Message">
+    </div>
+
+    <!-- Hidden FormSubmit fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <div style="text-align:center; margin-top:20px;">
+      <button type="submit" style="padding: 10px 25px; background-color: orange; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Submit
+      </button>
+    </div>
+
+    <div id="thank-you" style="display: none; text-align:center; margin-top:20px; font-weight:bold; color: green;">
+      ✅ Thank you! We will get in touch with you soon.
+    </div>
+  </form>
+</section>
+
+<script>
+  function showThankYouMessage(event) {
+    event.preventDefault(); 
+    const form = event.target;
+    const thankYou = document.getElementById("thank-you");
+    form.style.display = "none"; 
+    thankYou.style.display = "block"; 
+    setTimeout(() => form.submit(), 500); 
+  }
+</script>
 
 <section class="features-grid py-5" style="background-color: var(--section-bg);;">
   <div class="container">
