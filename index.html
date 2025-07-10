@@ -69,16 +69,7 @@
   </form>
 </section>
 
-<script>
-  function showThankYouMessage(event) {
-    event.preventDefault(); 
-    const form = event.target;
-    const thankYou = document.getElementById("thank-you");
-    form.style.display = "none"; 
-    thankYou.style.display = "block"; 
-    setTimeout(() => form.submit(), 500); 
-  }
-</script>
+
 
 <section class="features-grid py-5" style="background-color: var(--section-bg);;">
   <div class="container">
@@ -582,5 +573,16 @@
       <p>&copy; 2020-25 BSHMS. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+  function showThankYouMessage(event) {
+    event.preventDefault(); 
+    const form = event.target;
+    const thankYou = document.getElementById("thank-you");
+    form.style.display = "none"; 
+    thankYou.style.display = "block"; 
+    setTimeout(() => form.submit(), 500); 
+  }
+</script>
 </body>
 </html>
